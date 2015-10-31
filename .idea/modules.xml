@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/idoctor/idoctor.iml" filepath="$PROJECT_DIR$/idoctor/idoctor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xjbt_d.iml" filepath="$PROJECT_DIR$/xjbt_d.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xjbt_lib/xjbt_lib.iml" filepath="$PROJECT_DIR$/xjbt_lib/xjbt_lib.iml" />
+    </modules>
+  </component>
+</project>
