@@ -1,0 +1,20 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--通用标题栏-->
+    <style name="Base_Title_Bar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">49dp</item>
+        <item name="android:background">@color/white</item>
+        <item name="titlebar_leftAndRightPadding">20dp</item>
+        <item name="titlebar_leftAndRightTextColor">@color/black</item>
+        <item name="titlebar_leftAndRightTextSize">16sp</item>
+        <item name="titlebar_titleTextColor">@color/pink</item>
+        <item name="titlebar_titleTextSize">18sp</item>
+    </style>
+ß
+    <!--带有返回按钮的通用标题栏-->
+    <style name="TitleBar_Back" parent="Base_Title_Bar">
+        <item name="titlebar_leftDrawable">@drawable/lib_bg_btn_back</item>
+    </style>
+
+</resources>

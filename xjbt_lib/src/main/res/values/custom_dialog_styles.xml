@@ -1,0 +1,58 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <style name="CustomTheme"></style>
+
+    <style name="CustomTheme.NoTitleBar.Animation" parent="@android:style/Theme.NoTitleBar">
+        <item name="android:windowAnimationStyle">@style/AnimationActivity</item>
+    </style>
+
+    <style name="CustomTheme.Dialog.Float" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="CustomTheme.Dialog" parent="@android:style/Theme.Holo.Light.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="Animations" />
+
+    <style name="Animations.Dialog">
+        <item name="@android:windowEnterAnimation">@anim/in_from_right</item>
+        <item name="@android:windowExitAnimation">@anim/out_to_left</item>
+    </style>
+
+    <style name="Animations.Dialog.DropDown">
+        <item name="@android:windowEnterAnimation">@anim/drop_down_from_top</item>
+    </style>
+
+    <style name="Animations.Dialog.Slowly">
+        <item name="@android:windowEnterAnimation">@anim/in_from_right_slowly</item>
+        <item name="@android:windowExitAnimation">@anim/out_to_left_slowly</item>
+    </style>
+
+    <style name="Animations.Dialog.Alpha">
+        <item name="@android:windowEnterAnimation">@anim/alpha_flicker </item>
+    </style>
+
+    <style name="Animations.Dialog.Scale">
+        <item name="@android:windowEnterAnimation">@anim/scale</item>
+    </style>
+
+    <style name="Animations.Dialog.Fade">
+        <item name="@android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="@android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+
+
+</resources>

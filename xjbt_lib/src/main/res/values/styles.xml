@@ -57,31 +57,12 @@
         <item name="android:windowBackground">@android:color/transparent</item>
     </style>
 
-    <style name="CustomTheme"></style>
-
-    <style name="CustomTheme.NoTitleBar.Animation" parent="@android:style/Theme.NoTitleBar">
-        <item name="android:windowAnimationStyle">@style/AnimationActivity</item>
-    </style>
 
 
-    <!--其他自定义样式-->
-    <style name="CustomTheme.Dialog.Float" parent="@android:style/Theme.Dialog">
-        <item name="android:windowFrame">@null</item>
-        <item name="android:windowIsFloating">true</item>
-        <item name="android:windowIsTranslucent">false</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:backgroundDimEnabled">false</item>
-    </style>
 
-    <style name="CustomTheme.Dialog" parent="@android:style/Theme.Holo.Light.Dialog">
-        <item name="android:windowFrame">@null</item>
-        <item name="android:windowIsFloating">true</item>
-        <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:backgroundDimEnabled">true</item>
-    </style>
+
+
+
 
     <style name="CustomListView">
         <item name="android:scrollbars">vertical</item>
