@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
+import com.lonshine.lib.R;
 
 /**
  * Created by lonshine on 15/11/4 下午10:40.
