@@ -11,7 +11,7 @@
         <item name="titlebar_titleTextColor">@color/pink</item>
         <item name="titlebar_titleTextSize">18sp</item>
     </style>
-ß
+
     <!--带有返回按钮的通用标题栏-->
     <style name="TitleBar_Back" parent="Base_Title_Bar">
         <item name="titlebar_leftDrawable">@drawable/lib_bg_btn_back</item>
