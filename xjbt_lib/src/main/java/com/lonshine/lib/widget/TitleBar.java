@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
 import com.lonshine.lib.R;
 
 /**
@@ -64,76 +65,92 @@ public class TitleBar extends RelativeLayout implements View.OnClickListener {
     }
 
     protected void initAttr(int attr, TypedArray typedArray) {
-        switch (attr) {
-            case R.styleable.TitleBar_titlebar_leftText:
-                setLeftText(typedArray.getText(attr));
-                break;
-            case R.styleable.TitleBar_titlebar_titleText:
-                setTitleText(typedArray.getText(attr));
-                break;
-            case R.styleable.TitleBar_titlebar_rightText:
-                setRightText(typedArray.getText(attr));
-                break;
-            case R.styleable.TitleBar_titlebar_leftDrawable:
-                setLeftDrawable(typedArray.getDrawable(attr));
-                break;
-            case R.styleable.TitleBar_titlebar_titleDrawable:
-                setTitleDrawable(typedArray.getDrawable(attr));
-                break;
-            case R.styleable.TitleBar_titlebar_rightDrawable:
-                setRightDrawable(typedArray.getDrawable(attr));
-                break;
-            case R.styleable.TitleBar_titlebar_leftAndRightTextSize:
-                int textSize = typedArray.getDimensionPixelSize(attr, sp2px(getContext(), 12));
-                mLeftTv.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
-                mRightTv.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
-                break;
-            case R.styleable.TitleBar_titlebar_titleTextSize:
-                mTitleTv.setTextSize(TypedValue.COMPLEX_UNIT_PX, typedArray.getDimensionPixelSize(attr, sp2px(getContext(), 16)));
-                break;
-            case R.styleable.TitleBar_titlebar_leftAndRightTextColor:
-                mLeftTv.setTextColor(typedArray.getColorStateList(attr));
-                mRightTv.setTextColor(typedArray.getColorStateList(attr));
-                break;
-            case R.styleable.TitleBar_titlebar_titleTextColor:
-                mTitleTv.setTextColor(typedArray.getColorStateList(attr));
-                break;
-            case R.styleable.TitleBar_titlebar_titleDrawablePadding:
-                mTitleTv.setCompoundDrawablePadding(typedArray.getDimensionPixelSize(attr, dp2px(getContext(), 5)));
-                break;
-            case R.styleable.TitleBar_titlebar_leftDrawablePadding:
-                mLeftTv.setCompoundDrawablePadding(typedArray.getDimensionPixelSize(attr, dp2px(getContext(), 5)));
-                break;
-            case R.styleable.TitleBar_titlebar_rightDrawablePadding:
-                mRightTv.setCompoundDrawablePadding(typedArray.getDimensionPixelSize(attr, dp2px(getContext(), 5)));
-                break;
-            case R.styleable.TitleBar_titlebar_leftAndRightPadding:
-                int leftAndRightPadding = typedArray.getDimensionPixelSize(attr, dp2px(getContext(), 10));
-                mLeftTv.setPadding(leftAndRightPadding, 0, leftAndRightPadding, 0);
-                mRightTv.setPadding(leftAndRightPadding, 0, leftAndRightPadding, 0);
-                break;
-            case R.styleable.TitleBar_titlebar_leftMaxWidth:
-                setLefttvMaxWidth(typedArray.getDimensionPixelSize(attr, dp2px(getContext(), 100)));
-                break;
-            case R.styleable.TitleBar_titlebar_rightMaxWidth:
-                setRighttvMaxWidth(typedArray.getDimensionPixelSize(attr, dp2px(getContext(), 120)));
-                break;
-            case R.styleable.TitleBar_titlebar_titleMaxWidth:
-                setTitletvMaxWidth(typedArray.getDimensionPixelSize(attr, dp2px(getContext(), 144)));
-                break;
-            case R.styleable.TitleBar_titlebar_isTitleTextBold:
-                mTitleTv.getPaint().setFakeBoldText(typedArray.getBoolean(attr, true));
-                break;
-            case R.styleable.TitleBar_titlebar_isLeftTextBold:
-                mLeftTv.getPaint().setFakeBoldText(typedArray.getBoolean(attr, false));
-                break;
-            case R.styleable.TitleBar_titlebar_isRightTextBold:
-                mRightTv.getPaint().setFakeBoldText(typedArray.getBoolean(attr, false));
-                break;
-            case R.styleable.TitleBar_titlebar_isRightEnable:
-                setRightTextViewEnable(typedArray.getBoolean(attr, true));
-                break;
 
+        if(attr == R.styleable.TitleBar_titlebar_leftText){
+            setLeftText(typedArray.getText(attr));
+        }
+        if(attr == R.styleable.TitleBar_titlebar_leftText){
+            setTitleText(typedArray.getText(attr));
+        }
+        if(attr == R.styleable.TitleBar_titlebar_rightText){
+            setRightText(typedArray.getText(attr));
+        }
+
+        if(attr == R.styleable.TitleBar_titlebar_leftDrawable){
+            setLeftDrawable(typedArray.getDrawable(attr));
+        }
+
+        if(attr == R.styleable.TitleBar_titlebar_titleDrawable){
+            setTitleDrawable(typedArray.getDrawable(attr));
+        }
+
+        if(attr == R.styleable.TitleBar_titlebar_rightDrawable){
+            setRightDrawable(typedArray.getDrawable(attr));
+        }
+
+        if(attr == R.styleable.TitleBar_titlebar_leftAndRightTextSize){
+            int textSize = typedArray.getDimensionPixelSize(attr, sp2px(getContext(), 12));
+            mLeftTv.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
+            mRightTv.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
+        }
+
+        if(attr == R.styleable.TitleBar_titlebar_titleTextSize){
+            mTitleTv.setTextSize(TypedValue.COMPLEX_UNIT_PX, typedArray.getDimensionPixelSize(attr, sp2px(getContext(), 16)));
+        }
+
+        if(attr == R.styleable.TitleBar_titlebar_leftAndRightTextColor){
+            mLeftTv.setTextColor(typedArray.getColorStateList(attr));
+            mRightTv.setTextColor(typedArray.getColorStateList(attr));
+        }
+
+        if(attr == R.styleable.TitleBar_titlebar_titleTextColor){
+            mTitleTv.setTextColor(typedArray.getColorStateList(attr));
+        }
+
+        if(attr == R.styleable.TitleBar_titlebar_titleDrawablePadding){
+            mTitleTv.setCompoundDrawablePadding(typedArray.getDimensionPixelSize(attr, dp2px(getContext(), 5)));
+        }
+
+        if(attr == R.styleable.TitleBar_titlebar_leftDrawablePadding){
+            mLeftTv.setCompoundDrawablePadding(typedArray.getDimensionPixelSize(attr, dp2px(getContext(), 5)));
+        }
+
+        if(attr == R.styleable.TitleBar_titlebar_rightDrawablePadding){
+            mRightTv.setCompoundDrawablePadding(typedArray.getDimensionPixelSize(attr, dp2px(getContext(), 5)));
+        }
+
+        if(attr == R.styleable.TitleBar_titlebar_leftAndRightPadding){
+            int leftAndRightPadding = typedArray.getDimensionPixelSize(attr, dp2px(getContext(), 10));
+            mLeftTv.setPadding(leftAndRightPadding, 0, leftAndRightPadding, 0);
+            mRightTv.setPadding(leftAndRightPadding, 0, leftAndRightPadding, 0);
+        }
+
+        if(attr == R.styleable.TitleBar_titlebar_leftMaxWidth){
+            setLefttvMaxWidth(typedArray.getDimensionPixelSize(attr, dp2px(getContext(), 100)));
+        }
+
+        if(attr == R.styleable.TitleBar_titlebar_rightMaxWidth){
+            setRighttvMaxWidth(typedArray.getDimensionPixelSize(attr, dp2px(getContext(), 120)));
+        }
+
+        if(attr == R.styleable.TitleBar_titlebar_titleMaxWidth){
+            setTitletvMaxWidth(typedArray.getDimensionPixelSize(attr, dp2px(getContext(), 144)));
+        }
+
+        if(attr == R.styleable.TitleBar_titlebar_isTitleTextBold){
+            mTitleTv.getPaint().setFakeBoldText(typedArray.getBoolean(attr, true));
+        }
+
+        if(attr == R.styleable.TitleBar_titlebar_isLeftTextBold){
+            mLeftTv.getPaint().setFakeBoldText(typedArray.getBoolean(attr, false));
+        }
+
+        if(attr == R.styleable.TitleBar_titlebar_isRightTextBold){
+            mRightTv.getPaint().setFakeBoldText(typedArray.getBoolean(attr, false));
+        }
+
+        if(attr == R.styleable.TitleBar_titlebar_isRightEnable){
+            setRightTextViewEnable(typedArray.getBoolean(attr, true));
         }
     }
 
@@ -286,16 +303,12 @@ public class TitleBar extends RelativeLayout implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if (mTitleBarListener != null) {
-            switch (v.getId()) {
-                case R.id.titlebar_title:
-                    mTitleBarListener.onClickTitle(v);
-                    break;
-                case R.id.titlebar_left:
-                    mTitleBarListener.onClickLeft(v);
-                    break;
-                case R.id.titlebar_right:
-                    mTitleBarListener.onClickRight(v);
-                    break;
+            if(v.getId() == R.id.titlebar_title){
+                mTitleBarListener.onClickTitle(v);
+            }else if(v.getId() == R.id.titlebar_left){
+                mTitleBarListener.onClickLeft(v);
+            }else if(v.getId() == R.id.titlebar_right){
+                mTitleBarListener.onClickRight(v);
             }
         }
     }
