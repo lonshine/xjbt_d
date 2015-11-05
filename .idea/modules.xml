@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/idoctor/idoctor.iml" filepath="$PROJECT_DIR$/idoctor/idoctor.iml" />
-      <module fileurl="file://$PROJECT_DIR$/xjbt_d.iml" filepath="$PROJECT_DIR$/xjbt_d.iml" />
       <module fileurl="file://$PROJECT_DIR$/xjbt_lib/xjbt_lib.iml" filepath="$PROJECT_DIR$/xjbt_lib/xjbt_lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xjbt_td.iml" filepath="$PROJECT_DIR$/xjbt_td.iml" />
     </modules>
   </component>
 </project>
