@@ -1,0 +1,52 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+    >
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vpMainTab"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rgMainTab"
+        />
+
+    <RadioGroup
+        android:id="@+id/rgMainTab"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbHome"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textSize="17sp"
+            android:textColor="@color/blue"
+            android:drawablePadding="4dp"
+            android:drawableTop="@drawable/spinner_0"
+            android:text="主页"
+            />
+
+        <RadioButton
+            android:id="@+id/rbInfo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:textSize="17sp"
+            android:textColor="@color/blue"
+            android:drawablePadding="4dp"
+            android:drawableTop="@drawable/spinner_0"
+            android:text="记录"
+            />
+    </RadioGroup>
+
+
+</RelativeLayout>
