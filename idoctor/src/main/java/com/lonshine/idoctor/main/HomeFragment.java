@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.lonshine.idoctor.R;
+import com.lonshine.idoctor.treat.TreatActivity;
 
 /**
  * Created by lonshine on 15/11/10 上午12:16.
@@ -20,5 +21,20 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, null);
 
         return view;
+    }
+
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+
+        view.findViewById(R.id.test).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TreatActivity.start(getActivity());
+            }
+        });
+
     }
 }

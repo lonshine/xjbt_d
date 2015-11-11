@@ -61,14 +61,18 @@
 
 
         <activity
-            android:name=".MainActivity"
+            android:name=".treat.TreatActivity"
             android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden"
-            android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoTitleBar.Animation"
             android:windowSoftInputMode="adjustResize|stateAlwaysHidden"></activity>
 
-
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoTitleBar.Animation"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden"></activity>
     </application>
 
 </manifest>
