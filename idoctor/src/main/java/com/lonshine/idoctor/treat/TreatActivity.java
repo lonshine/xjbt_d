@@ -4,9 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 
 import com.lonshine.idoctor.R;
+import com.lonshine.idoctor.data.DataString;
+import com.lonshine.idoctor.model.TreatProject;
 import com.lonshine.lib.activity.BaseFragmentActivity;
+import com.lonshine.lib.data.gson.GsonManager;
 
 import java.util.ArrayList;
 
@@ -52,6 +56,10 @@ public class TreatActivity extends BaseFragmentActivity {
         mDataList.add("");
         mDataList.add("");
         mDataList.add("");
+
+
+        TreatProject treatProject = GsonManager.get().fromJson(DataString.JSON, TreatProject.class);
+        Log.e("json","" + treatProject.toString());
 
     }
 
