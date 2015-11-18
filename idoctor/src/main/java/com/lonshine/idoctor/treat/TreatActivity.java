@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 
 import com.lonshine.idoctor.R;
 import com.lonshine.idoctor.data.DataString;
@@ -23,18 +22,17 @@ import butterknife.InjectView;
 public class TreatActivity extends BaseFragmentActivity {
 
     ArrayList<Object> mDataList;
-
+    TreatProject mTreatProject;
 
     @InjectView(R.id.vpTreat)
     ViewPager vpTreat;
 
 
-    public static void start(Context context){
-        Intent intent = new Intent(context,TreatActivity.class);
+    public static void start(Context context) {
+        Intent intent = new Intent(context, TreatActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
-
 
 
     @Override
@@ -58,8 +56,7 @@ public class TreatActivity extends BaseFragmentActivity {
         mDataList.add("");
 
 
-        TreatProject treatProject = GsonManager.get().fromJson(DataString.JSON, TreatProject.class);
-        Log.e("json","" + treatProject.toString());
+        mTreatProject = GsonManager.get().fromJson(DataString.JSON, TreatProject.class);
 
     }
 
@@ -67,7 +64,7 @@ public class TreatActivity extends BaseFragmentActivity {
     @Override
     protected void initView() {
         ButterKnife.inject(this);
-        ViewPagerAdapter mAdapter = new ViewPagerAdapter(this,mDataList);
+        ViewPagerAdapter mAdapter = new ViewPagerAdapter(this, mTreatProject);
         vpTreat.setAdapter(mAdapter);
     }
 }
