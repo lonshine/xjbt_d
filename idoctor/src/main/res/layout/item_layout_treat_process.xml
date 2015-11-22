@@ -30,11 +30,20 @@
         android:layout_gravity="center_horizontal"/>
 
 
-    <com.lonshine.idoctor.widget.CheckViewGroup
-        android:id="@+id/cvgItemProcess"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        />
+        android:layout_height="match_parent"
+        >
+
+
+        <com.lonshine.idoctor.widget.CheckViewGroup
+            android:id="@+id/cvgItemProcess"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            />
+
+
+    </ScrollView>
 
 </LinearLayout>
