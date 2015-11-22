@@ -12,6 +12,8 @@ public class TreatProcess {
     public int checkable;
     public int multi_check;
     public int is_child;
+    public String process_index;
+    public String child_index;
 
     public String describe;
     public long parent_id;
@@ -20,7 +22,6 @@ public class TreatProcess {
     public TreatProcessParent parent;
 
     public ArrayList<TreatCheckable> check_list;
-//    public ArrayList<TreatCheckable> check_result_list;
 
     public TreatResultCode treat_result_code;
 

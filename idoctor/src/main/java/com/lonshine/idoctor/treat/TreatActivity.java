@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 
 import com.lonshine.idoctor.R;
 import com.lonshine.idoctor.data.DataString;
@@ -11,8 +12,10 @@ import com.lonshine.idoctor.model.TreatProject;
 import com.lonshine.lib.activity.BaseFragmentActivity;
 import com.lonshine.lib.data.gson.GsonManager;
 
-import java.util.ArrayList;
+import java.util.concurrent.Callable;
 
+import bolts.Continuation;
+import bolts.Task;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
@@ -21,8 +24,12 @@ import butterknife.InjectView;
  */
 public class TreatActivity extends BaseFragmentActivity {
 
-    ArrayList<Object> mDataList;
+    private final static String TAG = "TreatActivity";
+
     TreatProject mTreatProject;
+    ViewPagerAdapter mAdapter;
+
+
 
     @InjectView(R.id.vpTreat)
     ViewPager vpTreat;
@@ -45,26 +52,43 @@ public class TreatActivity extends BaseFragmentActivity {
     @Override
     protected void initData() {
 
-        mDataList = new ArrayList<Object>();
-        mDataList.add("");
-        mDataList.add("");
-        mDataList.add("");
-        mDataList.add("");
-        mDataList.add("");
-        mDataList.add("");
-        mDataList.add("");
-        mDataList.add("");
-
-
-        mTreatProject = GsonManager.get().fromJson(DataString.JSON, TreatProject.class);
-
     }
 
 
     @Override
     protected void initView() {
         ButterKnife.inject(this);
-        ViewPagerAdapter mAdapter = new ViewPagerAdapter(this, mTreatProject);
+
+        mAdapter = new ViewPagerAdapter(TreatActivity.this);
         vpTreat.setAdapter(mAdapter);
+
+
+        Task.callInBackground(new Callable<TreatProject>() {
+            @Override
+            public TreatProject call() throws Exception {
+                TreatProject treatProject = GsonManager.get().fromJson(DataString.JSON, TreatProject.class);
+                return treatProject;
+            }
+        }).continueWithTask(new Continuation<TreatProject, Task<Object>>() {
+            @Override
+            public Task<Object> then(Task<TreatProject> task) throws Exception {
+
+                if(task.isFaulted()){
+                    Log.e(TAG,"mTreatProject parse failed.");
+                    return null;
+                }
+
+                mTreatProject = task.getResult();
+                updateUI();
+
+                return null;
+            }
+        },Task.UI_THREAD_EXECUTOR);
+    }
+
+    private void updateUI() {
+        getBaseTitleBar().setTitleText("" + mTreatProject.name);
+        mAdapter.setTreatProject(mTreatProject);
+        mAdapter.notifyDataSetChanged();
     }
 }

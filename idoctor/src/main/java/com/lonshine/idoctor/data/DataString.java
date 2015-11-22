@@ -94,7 +94,9 @@ public class DataString {
             "\"lvguorong\":0,\n" +
             "\"lee_hj_main\":0,\n" +
             "\"costanini_m_ok\":0,\n" +
-            "\"gokalp_g_ok\":0}},\n" +
+            "\"gokalp_g_ok\":0},\n" +
+            "\"process_index\":\"A\",\n" +
+            "\"child_index\":\"\"},\n" +
             "{\"id\":10002,\n" +
             "\"name\":\"形状\",\n" +
             "\"checkable\":1,\n" +
@@ -156,7 +158,9 @@ public class DataString {
             "\"lvguorong\":0,\n" +
             "\"lee_hj_main\":0,\n" +
             "\"costanini_m_ok\":0,\n" +
-            "\"gokalp_g_ok\":0}},\n" +
+            "\"gokalp_g_ok\":0},\n" +
+            "\"process_index\":\"B\",\n" +
+            "\"child_index\":\"1\"},\n" +
             "{\"id\":10004,\n" +
             "\"name\":\"位相\",\n" +
             "\"checkable\":1,\n" +
@@ -204,7 +208,9 @@ public class DataString {
             "\"name\":\"肿块\",\n" +
             "\"checkable\":0,\n" +
             "\"multi_check\":0,\n" +
-            "\"describe\":\"占位性病变且可以在两个不同的切面上看到\"}},\n" +
+            "\"describe\":\"占位性病变且可以在两个不同的切面上看到\"},\n" +
+            "\"process_index\":\"B\",\n" +
+            "\"child_index\":\"2\"},\n" +
             "{\"id\":10005,\n" +
             "\"name\":\"边缘\",\n" +
             "\"checkable\":1,\n" +
@@ -311,7 +317,9 @@ public class DataString {
             "\"name\":\"肿块\",\n" +
             "\"checkable\":0,\n" +
             "\"multi_check\":0,\n" +
-            "\"describe\":\"占位性病变且可以在两个不同的切面上看到\"}},\n" +
+            "\"describe\":\"占位性病变且可以在两个不同的切面上看到\"},\n" +
+            "\"process_index\":\"B\",\n" +
+            "\"child_index\":\"3\"},\n" +
             "{\"id\":10006,\n" +
             "\"name\":\"回声类型\",\n" +
             "\"checkable\":1,\n" +
@@ -415,7 +423,9 @@ public class DataString {
             "\"name\":\"肿块\",\n" +
             "\"checkable\":0,\n" +
             "\"multi_check\":0,\n" +
-            "\"describe\":\"占位性病变且可以在两个不同的切面上看到\"}},\n" +
+            "\"describe\":\"占位性病变且可以在两个不同的切面上看到\"},\n" +
+            "\"process_index\":\"B\",\n" +
+            "\"child_index\":\"4\"},\n" +
             "{\"id\":10007,\n" +
             "\"name\":\"后方回声特征\",\n" +
             "\"checkable\":1,\n" +
@@ -491,7 +501,9 @@ public class DataString {
             "\"name\":\"肿块\",\n" +
             "\"checkable\":0,\n" +
             "\"multi_check\":0,\n" +
-            "\"describe\":\"占位性病变且可以在两个不同的切面上看到\"}},\n" +
+            "\"describe\":\"占位性病变且可以在两个不同的切面上看到\"},\n" +
+            "\"process_index\":\"B\",\n" +
+            "\"child_index\":\"5\"},\n" +
             "{\"id\":10008,\n" +
             "\"name\":\"周围组织\",\n" +
             "\"checkable\":1,\n" +
@@ -609,7 +621,9 @@ public class DataString {
             "\"name\":\"肿块\",\n" +
             "\"checkable\":0,\n" +
             "\"multi_check\":0,\n" +
-            "\"describe\":\"占位性病变且可以在两个不同的切面上看到\"}},\n" +
+            "\"describe\":\"占位性病变且可以在两个不同的切面上看到\"},\n" +
+            "\"process_index\":\"B\",\n" +
+            "\"child_index\":\"6\"},\n" +
             "{\"id\":10009,\n" +
             "\"name\":\"边界\",\n" +
             "\"checkable\":1,\n" +
@@ -657,7 +671,9 @@ public class DataString {
             "\"name\":\"肿块\",\n" +
             "\"checkable\":0,\n" +
             "\"multi_check\":0,\n" +
-            "\"describe\":\"占位性病变且可以在两个不同的切面上看到\"}},\n" +
+            "\"describe\":\"占位性病变且可以在两个不同的切面上看到\"},\n" +
+            "\"process_index\":\"B\",\n" +
+            "\"child_index\":\"7\"},\n" +
             "{\"id\":10010,\n" +
             "\"name\":\"钙化\",\n" +
             "\"checkable\":1,\n" +
@@ -745,7 +761,8 @@ public class DataString {
             "\"lee_hj_main\":0,\n" +
             "\"costanini_m_ok\":0,\n" +
             "\"gokalp_g_ok\":0},\n" +
-            "\"parent\":{}},\n" +
+            "\"parent\":{},\n" +
+            "\"process_index\":\"C\"},\n" +
             "{\"id\":10011,\n" +
             "\"name\":\"相关特征如果存在（选择所有适应的）\",\n" +
             "\"checkable\":1,\n" +
@@ -845,7 +862,8 @@ public class DataString {
             "\"lee_hj_main\":0,\n" +
             "\"costanini_m_ok\":0,\n" +
             "\"gokalp_g_ok\":0},\n" +
-            "\"parent\":{}},\n" +
+            "\"parent\":{},\n" +
+            "\"process_index\":\"D\"},\n" +
             "{\"id\":10012,\n" +
             "\"name\":\"特殊情况\",\n" +
             "\"checkable\":1,\n" +
@@ -1001,6 +1019,7 @@ public class DataString {
             "\"lee_hj_main\":0,\n" +
             "\"costanini_m_ok\":0,\n" +
             "\"gokalp_g_ok\":0},\n" +
-            "\"parent\":{}}]}";
+            "\"parent\":{},\n" +
+            "\"process_index\":\"E\"}]}";
 
 }

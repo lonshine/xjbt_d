@@ -3,6 +3,7 @@ package com.lonshine.idoctor.treat;
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,11 +29,19 @@ public class ViewPagerAdapter extends PagerAdapter{
     private ViewPagerAdapter() {
     }
 
+    public ViewPagerAdapter(Context context) {
+        mContext = context;
+    }
+
 
     public ViewPagerAdapter(Context context,TreatProject treatProject) {
         mContext = context;
-        mTreatProject = treatProject;
+        setTreatProject(treatProject);
+    }
 
+
+    public void setTreatProject(TreatProject treatProject) {
+        mTreatProject = treatProject;
         if(mTreatProject.data != null && mTreatProject.data.size() > 0){
             mList = mTreatProject.data;
         }else{
@@ -41,25 +50,42 @@ public class ViewPagerAdapter extends PagerAdapter{
     }
 
 
-
-
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
 
         View layout = LayoutInflater.from(mContext).inflate(R.layout.item_layout_treat_process, null);
+        if(mTreatProject == null || mList == null){
+            return layout;
+        }
+
         if(mViews.size() < mList.size()){
             mViews.add(layout);
         }
-
         ((ViewPager)container).addView(layout, 0);
 
-        TextView tv = (TextView) layout.findViewById(R.id.tvProcessTitle);
-        tv.setText(position + "");
-
+        TextView tvProcessTitle = (TextView) layout.findViewById(R.id.tvProcessTitle);
+        TextView tvProcessName = (TextView) layout.findViewById(R.id.tvProcessName);
+        TextView tvProcessDescribe = (TextView) layout.findViewById(R.id.tvProcessDescribe);
         CheckViewGroup cvgItemProcess = (CheckViewGroup) layout.findViewById(R.id.cvgItemProcess);
+
 
         TreatProcess treatProcess = mList.get(position);
         cvgItemProcess.setTreatProcess(treatProcess);
+        if(treatProcess.is_child > 0){
+            tvProcessTitle.setText(treatProcess.process_index + " - " + treatProcess.parent_name);
+            tvProcessName.setText("(" + treatProcess.child_index + ")" + treatProcess.name);
+            tvProcessName.setVisibility(View.VISIBLE);
+        }else{
+            tvProcessTitle.setText(treatProcess.process_index + " - " + treatProcess.name);
+            tvProcessName.setVisibility(View.GONE);
+        }
+
+
+        if(TextUtils.isEmpty(treatProcess.describe)){
+            tvProcessDescribe.setVisibility(View.GONE);
+        }else{
+            tvProcessDescribe.setText(treatProcess.describe);
+        }
 
         return layout;
     }
@@ -82,7 +108,6 @@ public class ViewPagerAdapter extends PagerAdapter{
         }
         return 0;
     }
-
 
 
 }
