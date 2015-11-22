@@ -10,9 +10,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.lonshine.idoctor.R;
+import com.lonshine.idoctor.model.TreatCheckable;
 import com.lonshine.idoctor.model.TreatProcess;
 import com.lonshine.idoctor.model.TreatProject;
 import com.lonshine.idoctor.widget.CheckViewGroup;
+import com.lonshine.idoctor.widget.TreatCheckView;
+import com.lonshine.lib.view.checkbox.CheckableView;
 
 import java.util.ArrayList;
 
@@ -69,6 +72,15 @@ public class ViewPagerAdapter extends PagerAdapter{
         CheckViewGroup cvgItemProcess = (CheckViewGroup) layout.findViewById(R.id.cvgItemProcess);
 
 
+        final TextView tvLeeHJ_main = (TextView) layout.findViewById(R.id.tvLeeHJ_main);
+        final TextView tvLeeHJ = (TextView) layout.findViewById(R.id.tvLeeHJ);
+        final TextView tvCostantiniM_ok = (TextView) layout.findViewById(R.id.tvCostantiniM_ok);
+        final TextView tvCostantiniM = (TextView) layout.findViewById(R.id.tvCostantiniM);
+        final TextView tvGokalpG_ok = (TextView) layout.findViewById(R.id.tvGokalpG_ok);
+        final TextView tvGokalpG = (TextView) layout.findViewById(R.id.tvGokalpG);
+        final TextView tvLvGuorong = (TextView) layout.findViewById(R.id.tvLvGuorong);
+
+
         TreatProcess treatProcess = mList.get(position);
         cvgItemProcess.setTreatProcess(treatProcess);
         if(treatProcess.is_child > 0){
@@ -86,6 +98,65 @@ public class ViewPagerAdapter extends PagerAdapter{
         }else{
             tvProcessDescribe.setText(treatProcess.describe);
         }
+
+        cvgItemProcess.setOnCheckedChangeListener(new CheckViewGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CheckViewGroup group, CheckableView checkableView, boolean isCheck) {
+
+                TreatCheckable tc = ((TreatCheckView)checkableView).getTreatCheckable();
+                if(tc != null){
+                    if(tc.treat_result_code.costanini_m > 0 && isCheck){
+                        tvCostantiniM.setVisibility(View.VISIBLE);
+                    }else{
+                        tvCostantiniM.setVisibility(View.GONE);
+                    }
+
+                    if(tc.treat_result_code.costanini_m_ok > 0 && isCheck){
+                        tvCostantiniM_ok.setVisibility(View.VISIBLE);
+                    }else{
+                        tvCostantiniM_ok.setVisibility(View.GONE);
+                    }
+
+                    if(tc.treat_result_code.lee_hj > 0 && isCheck){
+                        tvLeeHJ.setVisibility(View.VISIBLE);
+                    }else{
+                        tvLeeHJ.setVisibility(View.GONE);
+                    }
+
+
+                    if(tc.treat_result_code.lee_hj_main > 0 && isCheck){
+                        tvLeeHJ_main.setVisibility(View.VISIBLE);
+                    }else{
+                        tvLeeHJ_main.setVisibility(View.GONE);
+                    }
+
+
+                    if(tc.treat_result_code.gokalp_g > 0 && isCheck){
+                        tvGokalpG.setVisibility(View.VISIBLE);
+                    }else{
+                        tvGokalpG.setVisibility(View.GONE);
+                    }
+
+
+                    if(tc.treat_result_code.gokalp_g_ok > 0 && isCheck){
+                        tvGokalpG_ok.setVisibility(View.VISIBLE);
+                    }else{
+                        tvGokalpG_ok.setVisibility(View.GONE);
+                    }
+
+
+                    if(tc.treat_result_code.lvguorong > 0 && isCheck){
+                        tvLvGuorong.setVisibility(View.VISIBLE);
+                    }else{
+                        tvLvGuorong.setVisibility(View.GONE);
+                    }
+
+                }
+
+            }
+        });
+
+
 
         return layout;
     }

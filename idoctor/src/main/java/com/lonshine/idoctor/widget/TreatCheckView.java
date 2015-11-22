@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.lonshine.idoctor.R;
+import com.lonshine.idoctor.model.TreatCheckable;
 import com.lonshine.lib.view.checkbox.CheckableView;
 
 /**
@@ -15,6 +16,9 @@ import com.lonshine.lib.view.checkbox.CheckableView;
 public class TreatCheckView extends CheckableView {
     TextView tvCheck;
     View vEmpty;
+
+    TreatCheckable mTreatCheckable;
+
 
     public TreatCheckView(Context context) {
         super(context);
@@ -43,4 +47,23 @@ public class TreatCheckView extends CheckableView {
             tvCheck.setTextColor(getResources().getColor(R.color.black));
         }
     }
+
+
+    public void setData(TreatCheckable treatCheckable){
+        mTreatCheckable = treatCheckable;
+        updateView();
+    }
+
+    private void updateView() {
+        if(mTreatCheckable == null){
+            return;
+        }
+        tvCheck.setText(mTreatCheckable.name);
+    }
+
+
+    public TreatCheckable getTreatCheckable() {
+        return mTreatCheckable;
+    }
+
 }
