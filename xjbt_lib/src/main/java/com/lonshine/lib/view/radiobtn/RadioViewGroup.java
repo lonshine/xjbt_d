@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.lonshine.lib.view.checkbox.CheckableView;
+
 /**
  * Created by lonshine on 15/11/4 下午9:51.
  */
@@ -109,11 +111,11 @@ public class RadioViewGroup extends LinearLayout {
     private class CheckedStateTracker implements RadioView.OnCheckedChangeListener {
 
         @Override
-        public void onCheckedChanged(View CheckableView, boolean isChecked) {
+        public void onCheckedChanged(CheckableView checkableView, boolean isChecked) {
             if (mCheckedId != -1) {
                 setCheckedStateForView(mCheckedId, false);
             }
-            int id = CheckableView.getId();
+            int id = checkableView.getId();
             if(isChecked){
                 setCheckedId(id);
             }

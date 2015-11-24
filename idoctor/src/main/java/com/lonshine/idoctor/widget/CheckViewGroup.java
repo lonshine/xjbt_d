@@ -159,18 +159,19 @@ public class CheckViewGroup extends LinearLayout {
     private class CheckedStateTracker implements CheckableView.OnCheckedChangeListener {
 
         @Override
-        public void onCheckedChanged(View CheckableView, boolean isChecked) {
-            checkdStateTrackerChanged(CheckableView, isChecked);
+        public void onCheckedChanged(CheckableView checkableView, boolean isChecked) {
+            checkdStateTrackerChanged(checkableView, isChecked);
         }
     }
 
     /**
      * childView状态变化时
-     * @param CheckableView
-     * @param isChecked
      */
-    public void checkdStateTrackerChanged(View CheckableView, boolean isChecked) {
+    public void checkdStateTrackerChanged(CheckableView checkableView, boolean isChecked) {
         //TODO
+        if(mOnCheckedChangeListener != null){
+            mOnCheckedChangeListener.onCheckedChanged(this,checkableView,isChecked);
+        }
     }
 
 }

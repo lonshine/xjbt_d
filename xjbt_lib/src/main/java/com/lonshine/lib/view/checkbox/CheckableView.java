@@ -7,7 +7,6 @@ package com.lonshine.lib.view.checkbox;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
-import android.view.View;
 import android.widget.Checkable;
 import android.widget.RelativeLayout;
 
@@ -100,7 +99,7 @@ public class CheckableView extends RelativeLayout implements Checkable {
 
 
     public static interface OnCheckedChangeListener {
-        void onCheckedChanged(View CheckableView, boolean isChecked);
+        void onCheckedChanged(CheckableView view, boolean isChecked);
     }
 
 
