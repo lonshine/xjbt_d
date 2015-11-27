@@ -13,9 +13,16 @@
         android:layout_below="@+id/title_bar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/rgMainTab"
+        android:layout_above="@+id/lTest"
         />
 
+    <include
+        android:id="@+id/lTest"
+        layout="@layout/layout_test_result_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+    />
 
 
 </RelativeLayout>

@@ -60,10 +60,7 @@
             android:orientation="vertical"
             />
 
-            <include layout="@layout/layout_test_result_code"
-                     />
         </LinearLayout>
-
     </ScrollView>
 
 </LinearLayout>

@@ -73,10 +73,11 @@ public class CheckViewGroup extends LinearLayout {
      * @param treatProcess
      */
     public void setTreatProcess(TreatProcess treatProcess){
-        mTreatProcess = treatProcess;
-        if(mTreatProcess == null){
+        if(treatProcess == null){
             return;
         }
+
+        mTreatProcess = treatProcess;
 
         if(mTreatProcess.check_list != null && mTreatProcess.check_list.size() > 0){
             addTreatCheckableView(mTreatProcess.check_list);
