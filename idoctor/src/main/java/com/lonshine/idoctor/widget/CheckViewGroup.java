@@ -173,6 +173,51 @@ public class CheckViewGroup extends LinearLayout {
         if(mOnCheckedChangeListener != null){
             mOnCheckedChangeListener.onCheckedChanged(this,checkableView,isChecked);
         }
+
+        TreatCheckable tc = ((TreatCheckView) checkableView).getTreatCheckable();
+
+        for (int i = 0; i < getChildCount(); i++) {
+            TreatCheckView treatCheckView = (TreatCheckView) getChildAt(i);
+            TreatCheckable treatCheckable = treatCheckView.getTreatCheckable();
+
+            if(tc.id == treatCheckable.id){
+                break;
+            }
+
+            //TODO 多选处理
+
+            //变化的是子item
+            if(tc.is_child > 0){
+                if(isChecked){
+                    //该子item对应的父item勾选
+                    if(treatCheckable.is_child == 0 && treatCheckable.id == tc.parent_id){
+                        treatCheckView.setChecked(true);
+                    }else{
+                        treatCheckView.setChecked(false);
+                    }
+                }else{
+                    //不做处理
+                }
+            }else{
+                //变化的是父item
+                if(isChecked){
+                    //其他父item去除勾选
+                    if(treatCheckable.is_child == 0){
+                        treatCheckView.setChecked(false);
+                    }else{
+                        //其他不属于该父item的子item去除勾选
+                        if(treatCheckable.parent_id != tc.id){
+                            treatCheckView.setChecked(false);
+                        }
+                    }
+                }else{
+                    if(treatCheckable.is_child > 0 && treatCheckable.parent_id == tc.id){
+                        treatCheckView.setChecked(false);
+                    }
+                }
+            }
+
+        }
     }
 
 }
