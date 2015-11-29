@@ -2,6 +2,7 @@ package com.lonshine.idoctor.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
@@ -46,6 +47,9 @@ public class TreatCheckView extends CheckableView {
         }else{
             tvCheck.setTextColor(getResources().getColor(R.color.black));
         }
+
+        Log.d("名称check - refresh","" + mTreatCheckable.name);
+        Log.d("名称check - refresh ---","" + tvCheck.getText().toString());
     }
 
 
@@ -58,6 +62,9 @@ public class TreatCheckView extends CheckableView {
         if(mTreatCheckable == null){
             return;
         }
+
+        Log.d("名称check","" + mTreatCheckable.name);
+
         tvCheck.setText(mTreatCheckable.name);
     }
 

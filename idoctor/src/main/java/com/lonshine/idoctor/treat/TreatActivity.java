@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.lonshine.idoctor.R;
 import com.lonshine.idoctor.data.DataString;
+import com.lonshine.idoctor.data.TreatDataManager;
 import com.lonshine.idoctor.model.TreatCheckable;
 import com.lonshine.idoctor.model.TreatProcess;
 import com.lonshine.idoctor.model.TreatProject;
@@ -87,6 +88,7 @@ public class TreatActivity extends BaseFragmentActivity {
                 }
 
                 mTreatProject = task.getResult();
+                TreatDataManager.get().setTreatProject(mTreatProject);
                 updateUI();
 
                 return null;
@@ -114,6 +116,7 @@ public class TreatActivity extends BaseFragmentActivity {
                     treatProcess = mTreatProject.data.get(position);
                 }
 
+                tc.isChecked = isCheck;
                 updateData(isCheck, tc, treatProcess);
             }
         });

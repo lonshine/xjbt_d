@@ -22,6 +22,8 @@ public class TreatCheckable {
     public String parent_name;
 
 
+    public boolean isChecked;
+
     @Override
     public String toString() {
         return "TreatCheckable{" +

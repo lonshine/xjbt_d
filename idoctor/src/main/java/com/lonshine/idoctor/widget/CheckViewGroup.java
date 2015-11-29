@@ -99,17 +99,17 @@ public class CheckViewGroup extends LinearLayout {
 
     private void addCheckableView(TreatCheckable treatCheckable) {
         TreatCheckView checkView = new TreatCheckView(getContext());
-        checkView.setTag(treatCheckable);
         checkView.setData(treatCheckable);
         addView(checkView);
+        checkView.setChecked(treatCheckable.isChecked);
     }
 
 
     private void addChildCheckableView(TreatCheckable treatCheckable) {
         TreatChildCheckView checkView = new TreatChildCheckView(getContext());
-        checkView.setTag(treatCheckable);
         checkView.setData(treatCheckable);
         addView(checkView);
+        checkView.setChecked(treatCheckable.isChecked);
     }
 
 

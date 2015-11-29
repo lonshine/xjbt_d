@@ -36,10 +36,10 @@ public class ViewPagerAdapter extends PagerAdapter {
     }
 
 
-    public ViewPagerAdapter(Context context, TreatProject treatProject) {
-        mContext = context;
-        setTreatProject(treatProject);
-    }
+//    public ViewPagerAdapter(Context context, TreatProject treatProject) {
+//        mContext = context;
+//        setTreatProject(treatProject);
+//    }
 
 
     public void setTreatProject(TreatProject treatProject) {
@@ -56,7 +56,8 @@ public class ViewPagerAdapter extends PagerAdapter {
     public Object instantiateItem(ViewGroup container, final int position) {
 
         View layout = LayoutInflater.from(mContext).inflate(R.layout.item_layout_treat_process, null);
-        if (mTreatProject == null || mList == null) {
+
+        if (mList == null) {
             return layout;
         }
 
