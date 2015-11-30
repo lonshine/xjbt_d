@@ -50,7 +50,7 @@ public class CheckViewGroup extends LinearLayout {
 
 
     @Override
-    public void addView(View child, int index, ViewGroup.LayoutParams params) {
+    public void addView(final View child, final int index, ViewGroup.LayoutParams params) {
         super.addView(child, index, params);
 
         if(child != null && child instanceof CheckableView){
@@ -58,7 +58,7 @@ public class CheckViewGroup extends LinearLayout {
             child.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    clickCheckableView((TreatCheckView)child,index);
                 }
             });
             ((CheckableView) child).setOnCheckedChangeWidgetListener(
@@ -66,6 +66,7 @@ public class CheckViewGroup extends LinearLayout {
 
         }
     }
+
 
 
     /**
@@ -173,50 +174,42 @@ public class CheckViewGroup extends LinearLayout {
         if(mOnCheckedChangeListener != null){
             mOnCheckedChangeListener.onCheckedChanged(this,checkableView,isChecked);
         }
+    }
 
-        TreatCheckable tc = ((TreatCheckView) checkableView).getTreatCheckable();
+
+    private void clickCheckableView(TreatCheckView child, int index) {
+        TreatCheckable tc = child.getTreatCheckable();
 
         for (int i = 0; i < getChildCount(); i++) {
             TreatCheckView treatCheckView = (TreatCheckView) getChildAt(i);
             TreatCheckable treatCheckable = treatCheckView.getTreatCheckable();
 
-            if(tc.id == treatCheckable.id){
-                break;
+            if(tc.id != treatCheckable.id){
+                //TODO 多选处理
+                updateOtherCheckableView(child.isChecked(), tc, treatCheckView, treatCheckable);
             }
+        }
 
-            //TODO 多选处理
+    }
 
-            //变化的是子item
-            if(tc.is_child > 0){
-                if(isChecked){
-                    //该子item对应的父item勾选
-                    if(treatCheckable.is_child == 0 && treatCheckable.id == tc.parent_id){
-                        treatCheckView.setChecked(true);
-                    }else{
-                        treatCheckView.setChecked(false);
-                    }
-                }else{
-                    //不做处理
-                }
+
+    private void updateOtherCheckableView(boolean isChecked, TreatCheckable tc, TreatCheckView treatCheckView, TreatCheckable treatCheckable) {
+
+        if(isChecked){
+            if(tc.is_child == 0 && treatCheckable.is_child == 1 && treatCheckable.parent_id == tc.id){
+                //勾选的是父item,而你是它的子item
+            }else if(tc.is_child == 1 && treatCheckable.is_child == 0 && tc.parent_id == treatCheckable.id){
+                //勾选的是子item,而你是它父item
+                treatCheckView.setChecked(true);
             }else{
-                //变化的是父item
-                if(isChecked){
-                    //其他父item去除勾选
-                    if(treatCheckable.is_child == 0){
-                        treatCheckView.setChecked(false);
-                    }else{
-                        //其他不属于该父item的子item去除勾选
-                        if(treatCheckable.parent_id != tc.id){
-                            treatCheckView.setChecked(false);
-                        }
-                    }
-                }else{
-                    if(treatCheckable.is_child > 0 && treatCheckable.parent_id == tc.id){
-                        treatCheckView.setChecked(false);
-                    }
-                }
+                treatCheckView.setChecked(false);
             }
+        }else{
 
+            //去除勾选的是父item,他的所有子item去除勾选
+            if(tc.is_child == 0 && treatCheckable.is_child == 1 && treatCheckable.parent_id == tc.id && treatCheckView.isChecked()){
+                treatCheckView.setChecked(false);
+            }
         }
     }
 
