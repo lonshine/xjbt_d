@@ -1,25 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="horizontal"
-              android:padding="12dp"
-              android:background="@color/gray"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:orientation="horizontal">
 
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        >
 
     <View
-        android:layout_width="60dp"
+        android:id="@+id/vEmpty"
+        android:layout_width="30dp"
         android:layout_height="8dp"
-        android:layout_alignParentLeft="true"
-        android:id="@+id/vEmpty"/>
+        android:layout_alignParentLeft="true"/>
 
+    <ImageView
+        android:id="@+id/ivRadio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/vEmpty"
+        android:layout_centerVertical="true"
+        android:src="@drawable/rb_child_check_n"/>
 
 
     <TextView
+        android:id="@+id/tvCheck"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_toRightOf="@+id/vEmpty"
-        android:text="New Text"
-        android:id="@+id/tvCheck"/>
+        android:layout_toRightOf="@+id/ivRadio"
+        android:background="@drawable/bg_item_treatcheck"
+        android:padding="15dp"
+        android:text="New Text"/>
+
+    </RelativeLayout>
 </RelativeLayout>

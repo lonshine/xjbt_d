@@ -1,7 +1,7 @@
 <resources>
 
     <!--  按业务类型，定义在这，eg：bg，text...  -->
-    <color name="lib_main">#f2f2f2</color>
+    <color name="lib_main">#7A96CE</color>
 
 
     <!--  按颜色类型，定义在这-->
@@ -14,6 +14,16 @@
     <color name="red">#ff0000</color>
     <color name="yellow">#fdc81b</color>
     <color name="green">#00ff00</color>
+
+    <color name="blue_3e">#3ea0c6</color>
+    <color name="blue_7a">#7A96CE</color>
+    <color name="orange_e7">#e76a4d</color>
+    <color name="yellow_ee">#eecc33</color>
+    <color name="blue_b4">#b4e4f4</color>
+    <color name="blue_74">#74bcdb</color>
+
+
+
 
 
     <!--  透明类型 颜色定义在这-->

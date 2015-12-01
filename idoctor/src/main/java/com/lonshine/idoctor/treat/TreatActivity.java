@@ -42,6 +42,7 @@ public class TreatActivity extends BaseFragmentActivity {
 
     @InjectView(R.id.vpTreat)
     ViewPager vpTreat;
+    private View lTest;
 
 
     public static void start(Context context) {
@@ -221,20 +222,34 @@ public class TreatActivity extends BaseFragmentActivity {
 
     private void initTestUI() {
         findTestUI();
-        resetTestUI();
+//        resetTestUI();
+
+        lTest.setVisibility(View.VISIBLE);
+        getBaseTitleBar().getTitleTextView().setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                if(lTest.getVisibility() == View.VISIBLE){
+                    lTest.setVisibility(View.GONE);
+                }else{
+                    lTest.setVisibility(View.VISIBLE);
+                }
+                return false;
+            }
+        });
     }
 
     private void resetTestUI() {
-        tvCostantiniM.setVisibility(View.GONE);
-        tvCostantiniM_ok.setVisibility(View.GONE);
-        tvLeeHJ.setVisibility(View.GONE);
-        tvLeeHJ_main.setVisibility(View.GONE);
-        tvGokalpG.setVisibility(View.GONE);
-        tvGokalpG_ok.setVisibility(View.GONE);
-        tvLvGuorong.setVisibility(View.GONE);
+        tvCostantiniM.setTextColor(getResources().getColor(R.color.black));
+        tvCostantiniM_ok.setTextColor(getResources().getColor(R.color.black));
+        tvLeeHJ.setTextColor(getResources().getColor(R.color.black));
+        tvLeeHJ_main.setTextColor(getResources().getColor(R.color.black));
+        tvGokalpG.setTextColor(getResources().getColor(R.color.black));
+        tvGokalpG_ok.setTextColor(getResources().getColor(R.color.black));
+        tvLvGuorong.setTextColor(getResources().getColor(R.color.black));
     }
 
     private void findTestUI() {
+        lTest = findViewById(R.id.lTest);
         tvLeeHJ_main = (TextView) findViewById(R.id.tvLeeHJ_main);
         tvLeeHJ = (TextView) findViewById(R.id.tvLeeHJ);
         tvCostantiniM_ok = (TextView) findViewById(R.id.tvCostantiniM_ok);
@@ -247,57 +262,57 @@ public class TreatActivity extends BaseFragmentActivity {
     public void updateTestResult(TreatResultCode resultCode) {
 
         if (resultCode.costanini_m > 0) {
-            tvCostantiniM.setVisibility(View.VISIBLE);
+            tvCostantiniM.setTextColor(getResources().getColor(R.color.red));
 //            tvGokalpG_ok.setText("");
         } else {
-            tvCostantiniM.setVisibility(View.GONE);
+            tvCostantiniM.setTextColor(getResources().getColor(R.color.black));
         }
 
         if (resultCode.costanini_m_ok > 0) {
-            tvCostantiniM_ok.setVisibility(View.VISIBLE);
+            tvCostantiniM_ok.setTextColor(getResources().getColor(R.color.red));
 //            tvGokalpG_ok.setText("");
         } else {
-            tvCostantiniM_ok.setVisibility(View.GONE);
+            tvCostantiniM_ok.setTextColor(getResources().getColor(R.color.black));
         }
 
         if (resultCode.lee_hj > 0) {
-            tvLeeHJ.setVisibility(View.VISIBLE);
+            tvLeeHJ.setTextColor(getResources().getColor(R.color.red));
 //            tvGokalpG_ok.setText("");
         } else {
-            tvLeeHJ.setVisibility(View.GONE);
+            tvLeeHJ.setTextColor(getResources().getColor(R.color.black));
         }
 
 
         if (resultCode.lee_hj_main > 0) {
-            tvLeeHJ_main.setVisibility(View.VISIBLE);
+            tvLeeHJ_main.setTextColor(getResources().getColor(R.color.red));
 //            tvGokalpG_ok.setText("");
         } else {
-            tvLeeHJ_main.setVisibility(View.GONE);
+            tvLeeHJ_main.setTextColor(getResources().getColor(R.color.black));
         }
 
 
         if (resultCode.gokalp_g > 0) {
-            tvGokalpG.setVisibility(View.VISIBLE);
+            tvGokalpG.setTextColor(getResources().getColor(R.color.red));
 //            tvGokalpG_ok.setText("");
         } else {
-            tvGokalpG.setVisibility(View.GONE);
+            tvGokalpG.setTextColor(getResources().getColor(R.color.black));
         }
 
 
         if (resultCode.gokalp_g_ok > 0) {
-            tvGokalpG_ok.setVisibility(View.VISIBLE);
+            tvGokalpG_ok.setTextColor(getResources().getColor(R.color.red));
 //            tvGokalpG_ok.setText("");
         } else {
-            tvGokalpG_ok.setVisibility(View.GONE);
+            tvGokalpG_ok.setTextColor(getResources().getColor(R.color.black));
         }
 
 
         if (resultCode.lvguorong > 0) {
-            tvLvGuorong.setVisibility(View.VISIBLE);
+            tvLvGuorong.setTextColor(getResources().getColor(R.color.red));
 //            tvGokalpG_ok.setText("");
 
         } else {
-            tvLvGuorong.setVisibility(View.GONE);
+            tvLvGuorong.setTextColor(getResources().getColor(R.color.black));
         }
 
 

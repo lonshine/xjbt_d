@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.lonshine.idoctor.R;
@@ -18,6 +19,7 @@ public class TreatChildCheckView extends TreatCheckView {
     View vEmpty;
 
     TreatCheckable mTreatCheckable;
+    ImageView ivRadio;
 
 
     public TreatChildCheckView(Context context) {
@@ -35,14 +37,20 @@ public class TreatChildCheckView extends TreatCheckView {
 
         tvCheck = (TextView) findViewById(R.id.tvCheck);
         vEmpty = findViewById(R.id.vEmpty);
+        ivRadio = (ImageView) findViewById(R.id.ivRadio);
+        ivRadio.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void refreshCheckableView(boolean checked) {
         if(checked){
             tvCheck.setTextColor(getResources().getColor(R.color.pink));
+            ivRadio.setImageResource(R.drawable.rb_child_check_p);
+            tvCheck.setBackgroundResource(R.drawable.bg_item_treatcheck_p);
         }else{
             tvCheck.setTextColor(getResources().getColor(R.color.black));
+            ivRadio.setImageResource(R.drawable.rb_child_check_n);
+            tvCheck.setBackgroundResource(R.drawable.bg_item_treatcheck_n);
         }
     }
 

@@ -1,66 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/apk/res/android"
               xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:orientation="vertical"
+              xmlns:tools="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
-
-    <TextView
-        android:id="@+id/tvProcessTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="流程标题"
-        android:textColor="@color/blue"
-        android:textSize="16sp"
-        android:padding="8dp"
-        android:layout_gravity="left"/>
-
-    <TextView
-        android:id="@+id/tvProcessName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="流程副标题"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        android:paddingBottom="8dp"
-        android:textColor="@color/orange"
-        android:textSize="14sp"
-        android:layout_gravity="left"/>
-
-    <TextView
-        android:id="@+id/tvProcessDescribe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="描述说明"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        android:paddingBottom="8dp"
-        android:textSize="12sp"
-        android:textColor="@color/gray"
-        android:visibility="visible"
-        android:layout_gravity="left"/>
+              android:layout_height="match_parent"
+              android:orientation="vertical">
 
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
+        android:layout_margin="8dp"
+        android:background="@color/blue_3e"
+        android:orientation="vertical">
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-        <com.lonshine.idoctor.widget.CheckViewGroup
-            android:id="@+id/cvgItemProcess"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/tvProcessTitle"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_gravity="left"
+            android:padding="8dp"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            tools:text="流程标题"/>
+
+        <TextView
+            android:id="@+id/tvProcessName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:paddingBottom="8dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textColor="@color/yellow_ee"
+            android:textSize="15sp"
+            tools:text="流程副标题"/>
+
+        <TextView
+            android:id="@+id/tvProcessDescribe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:paddingBottom="8dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textColor="@color/gray"
+            android:textSize="14sp"
+            android:visibility="visible"
+            tools:text="描述说明"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="12dp"
+            android:background="#45ffffff"
             />
 
-        </LinearLayout>
-    </ScrollView>
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.lonshine.idoctor.widget.CheckViewGroup
+                    android:id="@+id/cvgItemProcess"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
 </LinearLayout>
