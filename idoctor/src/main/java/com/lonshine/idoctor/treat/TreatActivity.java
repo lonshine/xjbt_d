@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.lonshine.idoctor.R;
 import com.lonshine.idoctor.data.DataString;
@@ -39,9 +41,16 @@ public class TreatActivity extends BaseFragmentActivity {
     TrearFragmentAdapter mAdapter;
 
 
-
     @InjectView(R.id.vpTreat)
     ViewPager vpTreat;
+    @InjectView(R.id.tvLeft)
+    TextView tvLeft;
+    @InjectView(R.id.tvRight)
+    TextView tvRight;
+    @InjectView(R.id.tvFinish)
+    TextView tvFinish;
+    @InjectView(R.id.rlBottomBtn)
+    LinearLayout rlBottomBtn;
     private View lTest;
 
 
@@ -56,6 +65,7 @@ public class TreatActivity extends BaseFragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_treat);
+        ButterKnife.inject(this);
     }
 
 
@@ -83,8 +93,8 @@ public class TreatActivity extends BaseFragmentActivity {
             @Override
             public Task<Object> then(Task<TreatProject> task) throws Exception {
 
-                if(task.isFaulted()){
-                    Log.e(TAG,"mTreatProject parse failed.");
+                if (task.isFaulted()) {
+                    Log.e(TAG, "mTreatProject parse failed.");
                     return null;
                 }
 
@@ -94,9 +104,7 @@ public class TreatActivity extends BaseFragmentActivity {
 
                 return null;
             }
-        },Task.UI_THREAD_EXECUTOR);
-
-
+        }, Task.UI_THREAD_EXECUTOR);
 
 
     }
@@ -134,6 +142,15 @@ public class TreatActivity extends BaseFragmentActivity {
                 resetTestUI();
                 TreatProcess treatProcess = mTreatProject.data.get(position);
                 updateTestResult(treatProcess.treat_result_code);
+
+
+                if (position == 0) {
+                    showOnlyRightBtn();
+                } else if (position == mTreatProject.data.size() - 1) {
+                    shoFinishBtn();
+                } else {
+                    showLeftRightBtn();
+                }
             }
 
             @Override
@@ -142,7 +159,54 @@ public class TreatActivity extends BaseFragmentActivity {
             }
         });
 
+        showOnlyRightBtn();
+        tvLeft.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int page = vpTreat.getCurrentItem() - 1 < 0 ? 0 : vpTreat.getCurrentItem() - 1;
+                vpTreat.setCurrentItem(page);
+            }
+        });
+        tvRight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int page = vpTreat.getCurrentItem() + 1 > mAdapter.getCount() - 1 ? mAdapter.getCount() - 1 : vpTreat.getCurrentItem() + 1;
+                vpTreat.setCurrentItem(page);
+            }
+        });
+        tvFinish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"开发中...",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
     }
+
+
+    private void showLeftRightBtn(){
+        tvLeft.setVisibility(View.VISIBLE);
+        tvRight.setVisibility(View.VISIBLE);
+        tvFinish.setVisibility(View.GONE);
+    }
+
+    private void showOnlyRightBtn(){
+        tvLeft.setVisibility(View.GONE);
+        tvRight.setVisibility(View.VISIBLE);
+        tvFinish.setVisibility(View.GONE);
+    }
+
+    private void shoFinishBtn(){
+        tvLeft.setVisibility(View.VISIBLE);
+        tvRight.setVisibility(View.GONE);
+        tvFinish.setVisibility(View.VISIBLE);
+    }
+
+
+
+
+
 
     private void updateData(boolean isCheck, TreatCheckable tc, TreatProcess treatProcess) {
         if (tc != null && treatProcess != null) {
@@ -224,13 +288,13 @@ public class TreatActivity extends BaseFragmentActivity {
         findTestUI();
 //        resetTestUI();
 
-        lTest.setVisibility(View.VISIBLE);
+        lTest.setVisibility(View.GONE);
         getBaseTitleBar().getTitleTextView().setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                if(lTest.getVisibility() == View.VISIBLE){
+                if (lTest.getVisibility() == View.VISIBLE) {
                     lTest.setVisibility(View.GONE);
-                }else{
+                } else {
                     lTest.setVisibility(View.VISIBLE);
                 }
                 return false;

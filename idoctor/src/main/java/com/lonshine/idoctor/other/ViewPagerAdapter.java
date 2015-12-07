@@ -1,4 +1,4 @@
-package com.lonshine.idoctor.treat;
+package com.lonshine.idoctor.other;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.lonshine.idoctor.R;
 import com.lonshine.idoctor.model.TreatProcess;
 import com.lonshine.idoctor.model.TreatProject;
+import com.lonshine.idoctor.treat.PagerAdapterItemCheckListener;
 import com.lonshine.idoctor.widget.CheckViewGroup;
 import com.lonshine.lib.view.checkbox.CheckableView;
 
