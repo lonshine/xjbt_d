@@ -1,11 +1,14 @@
 package com.lonshine.idoctor.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by lonshine on 15/11/15 上午12:57.
  */
-public class TreatCheckable {
+public class TreatCheckable implements Serializable {
+
+    public final static long serialVersionUID = 1l;
 
     public long id;
     public String name;

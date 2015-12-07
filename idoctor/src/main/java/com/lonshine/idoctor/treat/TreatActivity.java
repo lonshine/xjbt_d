@@ -36,7 +36,7 @@ public class TreatActivity extends BaseFragmentActivity {
     private final static String TAG = "TreatActivity";
 
     TreatProject mTreatProject;
-    ViewPagerAdapter mAdapter;
+    TrearFragmentAdapter mAdapter;
 
 
 
@@ -69,7 +69,7 @@ public class TreatActivity extends BaseFragmentActivity {
     protected void initView() {
         ButterKnife.inject(this);
 
-        mAdapter = new ViewPagerAdapter(TreatActivity.this);
+        mAdapter = new TrearFragmentAdapter(getSupportFragmentManager());
         vpTreat.setAdapter(mAdapter);
         initTestUI();
 

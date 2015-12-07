@@ -20,7 +20,6 @@ public class CheckViewGroup extends LinearLayout {
 
     private  CheckedStateTracker mChildOnCheckedChangeListener;
     private CheckViewGroup.OnCheckedChangeListener mOnCheckedChangeListener;
-    private int mLastChangedId = -1;
 
     HashMap<Long,Boolean> mCheckedList;
 
@@ -115,23 +114,12 @@ public class CheckViewGroup extends LinearLayout {
 
 
 
-//    private void setLastChangedView(CheckableView checkableView, boolean isCheck) {
-//        if(checkableView == null){
-//            return;
-//        }
-//        mLastChangedId = checkableView.getId();
-//        if (mOnCheckedChangeListener != null) {
-//            mOnCheckedChangeListener.onCheckedChanged(this, checkableView,isCheck);
-//        }
-//    }
-
     public void setCheckedStateForView(int viewId, boolean checked) {
         View checkedView = findViewById(viewId);
         if (checkedView != null && checkedView instanceof CheckableView) {
             ((CheckableView) checkedView).setChecked(checked);
         }
     }
-
 
     /**
      * 通过id获取RadioView对象

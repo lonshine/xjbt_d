@@ -65,7 +65,15 @@
             android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoTitleBar.Animation"
-            android:windowSoftInputMode="adjustResize|stateAlwaysHidden"></activity>
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden">
+
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN"/>-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
+
+        </activity>
 
         <activity
             android:name=".MainActivity"

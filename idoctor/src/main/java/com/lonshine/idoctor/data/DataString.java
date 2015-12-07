@@ -226,12 +226,12 @@ public class DataString {
             "\"parent_name\":\"\",\n" +
             "\"child_id_list\":[],\n" +
             "\"treat_result_code\":{\"lee_hj\":0,\n" +
-            "\"costanini_m\":1,\n" +
-            "\"gokalp_g\":1,\n" +
+            "\"costanini_m\":0,\n" +
+            "\"gokalp_g\":0,\n" +
             "\"lvguorong\":0,\n" +
             "\"lee_hj_main\":0,\n" +
-            "\"costanini_m_ok\":0,\n" +
-            "\"gokalp_g_ok\":0}},\n" +
+            "\"costanini_m_ok\":1,\n" +
+            "\"gokalp_g_ok\":1}},\n" +
             "{\"id\":100011,\n" +
             "\"name\":\"不光整\",\n" +
             "\"is_child\":0,\n" +
@@ -298,11 +298,11 @@ public class DataString {
             "\"parent_id\":100011,\n" +
             "\"parent_name\":\"不光整\",\n" +
             "\"child_id_list\":[],\n" +
-            "\"treat_result_code\":{\"lee_hj\":1,\n" +
+            "\"treat_result_code\":{\"lee_hj\":0,\n" +
             "\"costanini_m\":0,\n" +
             "\"gokalp_g\":0,\n" +
             "\"lvguorong\":0,\n" +
-            "\"lee_hj_main\":0,\n" +
+            "\"lee_hj_main\":1,\n" +
             "\"costanini_m_ok\":0,\n" +
             "\"gokalp_g_ok\":0}}],\n" +
             "\"describe\":\"\",\n" +
@@ -611,7 +611,7 @@ public class DataString {
             "\"gokalp_g_ok\":0}}],\n" +
             "\"describe\":\"如果存在（选择所有适应的）\",\n" +
             "\"treat_result_code\":{\"lee_hj\":0,\n" +
-            "\"costanini_m\":1,\n" +
+            "\"costanini_m\":0,\n" +
             "\"gokalp_g\":0,\n" +
             "\"lvguorong\":0,\n" +
             "\"lee_hj_main\":0,\n" +
@@ -640,11 +640,11 @@ public class DataString {
             "\"child_id_list\":[],\n" +
             "\"treat_result_code\":{\"lee_hj\":0,\n" +
             "\"costanini_m\":0,\n" +
-            "\"gokalp_g\":1,\n" +
+            "\"gokalp_g\":0,\n" +
             "\"lvguorong\":0,\n" +
             "\"lee_hj_main\":0,\n" +
             "\"costanini_m_ok\":1,\n" +
-            "\"gokalp_g_ok\":0}},\n" +
+            "\"gokalp_g_ok\":1}},\n" +
             "{\"id\":100034,\n" +
             "\"name\":\"不清晰\",\n" +
             "\"is_child\":0,\n" +
@@ -732,11 +732,11 @@ public class DataString {
             "\"parent_id\":100036,\n" +
             "\"parent_name\":\"微钙化\",\n" +
             "\"child_id_list\":[],\n" +
-            "\"treat_result_code\":{\"lee_hj\":1,\n" +
+            "\"treat_result_code\":{\"lee_hj\":0,\n" +
             "\"costanini_m\":0,\n" +
             "\"gokalp_g\":1,\n" +
             "\"lvguorong\":1,\n" +
-            "\"lee_hj_main\":0,\n" +
+            "\"lee_hj_main\":1,\n" +
             "\"costanini_m_ok\":0,\n" +
             "\"gokalp_g_ok\":0}},\n" +
             "{\"id\":100039,\n" +

@@ -1,9 +1,13 @@
 package com.lonshine.idoctor.model;
 
+import java.io.Serializable;
+
 /**
  * Created by lonshine on 15/11/15 上午1:07.
  */
-public class TreatResultCode {
+public class TreatResultCode implements Serializable {
+
+    public final static long serialVersionUID = 1l;
 
     public int lee_hj;
     public int lee_hj_main;
