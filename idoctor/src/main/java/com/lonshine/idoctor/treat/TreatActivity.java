@@ -8,7 +8,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.lonshine.idoctor.R;
 import com.lonshine.idoctor.data.DataString;
@@ -111,10 +110,8 @@ public class TreatActivity extends BaseFragmentActivity {
 
     private void updateUI() {
         getBaseTitleBar().setTitleText("" + mTreatProject.name);
+
         mAdapter.setTreatProject(mTreatProject);
-        mAdapter.notifyDataSetChanged();
-
-
         mAdapter.setPagerAdapterItemCheckListener(new PagerAdapterItemCheckListener() {
             @Override
             public void onCheckedChanged(CheckViewGroup group, CheckableView checkableView, boolean isCheck, int position) {
@@ -158,6 +155,8 @@ public class TreatActivity extends BaseFragmentActivity {
 
             }
         });
+        mAdapter.notifyDataSetChanged();
+
 
         showOnlyRightBtn();
         tvLeft.setOnClickListener(new View.OnClickListener() {
@@ -177,7 +176,7 @@ public class TreatActivity extends BaseFragmentActivity {
         tvFinish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"开发中...",Toast.LENGTH_SHORT).show();
+                TreatResultActivity.start(TreatActivity.this,mTreatProject);
             }
         });
 
