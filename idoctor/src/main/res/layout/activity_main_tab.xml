@@ -15,7 +15,7 @@
     <RadioGroup
         android:id="@+id/rgMainTab"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal">
 
@@ -26,12 +26,13 @@
             android:layout_weight="1"
             android:gravity="center"
             android:button="@null"
-            android:textSize="17sp"
-            android:textColor="@color/blue"
-            android:drawablePadding="4dp"
-            android:drawableTop="@drawable/spinner_0"
+            android:textSize="18sp"
+            android:textColor="@color/main_tab_text"
             android:text="主页"
+            android:background="@color/lib_main"
+            android:checked="true"
             />
+
 
         <RadioButton
             android:id="@+id/rbInfo"
@@ -40,11 +41,10 @@
             android:layout_weight="1"
             android:gravity="center"
             android:button="@null"
-            android:textSize="17sp"
-            android:textColor="@color/blue"
-            android:drawablePadding="4dp"
-            android:drawableTop="@drawable/spinner_0"
-            android:text="记录"
+            android:textSize="18sp"
+            android:textColor="@color/main_tab_text"
+            android:text="我的"
+            android:background="@color/lib_main"
             />
     </RadioGroup>
 

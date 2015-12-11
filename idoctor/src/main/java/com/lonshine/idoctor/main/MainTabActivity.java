@@ -51,10 +51,28 @@ public class MainTabActivity extends BaseFragmentActivity implements RadioGroup.
         vpMainTab.setOffscreenPageLimit(TabPagerAdapter.TAB_COUNT);
         rgMainTab.setOnCheckedChangeListener(this);
 
-
         mTabPagerAdapter = new TabPagerAdapter(getSupportFragmentManager());
         mTabPagerAdapter.setDiscoverInitTab(TabPagerAdapter.TAB_HOME);
         vpMainTab.setAdapter(mTabPagerAdapter);
+
+        vpMainTab.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                if (!((RadioButton) rgMainTab.getChildAt(position)).isChecked()) {
+                    ((RadioButton) rgMainTab.getChildAt(position)).setChecked(true);
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
     @Override
@@ -65,6 +83,7 @@ public class MainTabActivity extends BaseFragmentActivity implements RadioGroup.
                 break;
             case R.id.rbInfo:
                 setPagerCurrentItem(TabPagerAdapter.TAB_ME);
+
                 break;
     }
 }
@@ -76,11 +95,15 @@ public class MainTabActivity extends BaseFragmentActivity implements RadioGroup.
             Log.e("","setPagerCurrentItem: vpPager == null.");
             return;
         }
-        vpMainTab.setCurrentItem(index, false);
-        Fragment fragment = mTabPagerAdapter.getItem(index);
-        if (fragment == null) {
-            Log.e("","setPagerCurrentItem: fragment == null.");
-            return;
+
+
+        if(vpMainTab.getCurrentItem() != index){
+            vpMainTab.setCurrentItem(index, true);
+            Fragment fragment = mTabPagerAdapter.getItem(index);
+            if (fragment == null) {
+                Log.e("","setPagerCurrentItem: fragment == null.");
+                return;
+            }
         }
 //        BaseFragment.checkAndInvokeOnPageStart(fragment);
     }
