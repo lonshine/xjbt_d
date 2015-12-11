@@ -16,6 +16,8 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_above="@+id/tvBackTreatProcess"
             android:id="@+id/scrollView">
 
             <LinearLayout
@@ -175,8 +177,58 @@
                     />
 
 
+                <TextView
+                    android:id="@+id/tvTreatResultDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:textSize="15sp"
+                    android:textColor="@color/tv_text"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:paddingRight="20dp"
+                    android:visibility="gone"
+                    android:text="查看检查详情"/>
+
+
             </LinearLayout>
         </ScrollView>
+
+        <TextView
+            android:id="@+id/tvBackTreatProcess"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="17sp"
+            android:textColor="@color/lib_main"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_above="@+id/tvFinishTreatProject"
+            android:padding="12dp"
+            android:background="@drawable/bg_btn_rectangle_light"
+            android:text="返回检查流程"/>
+
+
+        <TextView
+            android:id="@+id/tvFinishTreatProject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:textSize="17sp"
+            android:textColor="@color/red"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:padding="12dp"
+            android:background="@drawable/bg_btn_rectangle_light"
+            android:text="结束检查"/>
+
+
     </RelativeLayout>
 
 

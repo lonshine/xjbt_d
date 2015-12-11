@@ -16,10 +16,16 @@
     <color name="green">#00ff00</color>
 
     <color name="blue_3e">#3ea0c6</color>
+
     <color name="blue_7a">#7A96CE</color>
+    <color name="blue_7a90">#907a96CE</color>
+
     <color name="orange_e7">#e76a4d</color>
     <color name="yellow_ee">#eecc33</color>
+
     <color name="blue_b4">#b4e4f4</color>
+    <color name="blue_b490">#90b4e4f4</color>
+
     <color name="blue_74">#74bcdb</color>
 
 

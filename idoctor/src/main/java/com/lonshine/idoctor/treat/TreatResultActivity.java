@@ -3,6 +3,7 @@ package com.lonshine.idoctor.treat;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.lonshine.idoctor.R;
@@ -27,6 +28,12 @@ public class TreatResultActivity extends BaseFragmentActivity {
     TextView tvGokalpG;
     @InjectView(R.id.tvLvGuorong)
     TextView tvLvGuorong;
+    @InjectView(R.id.tvTreatResultDetail)
+    TextView tvTreatResultDetail;
+    @InjectView(R.id.tvBackTreatProcess)
+    TextView tvBackTreatProcess;
+    @InjectView(R.id.tvFinishTreatProject)
+    TextView tvFinishTreatProject;
 
 
     private TreatProject mTreatProject;
@@ -71,70 +78,91 @@ public class TreatResultActivity extends BaseFragmentActivity {
     }
 
     private void setDataView() {
-        if(mTreatProject == null){
+        if (mTreatProject == null) {
             return;
         }
 
         TreatResultCode treatResultCount = mTreatProject.getTreatResultCount();
 
 
-        if(treatResultCount.lee_hj_main >= 2){
+        if (treatResultCount.lee_hj_main >= 2) {
             tvLeeHJ.setText("BI-RADS5类: ≥2主要征象");
             tvLeeHJ.setTextColor(getResources().getColor(R.color.red));
-        }else if(treatResultCount.lee_hj_main >= 1){
+        } else if (treatResultCount.lee_hj_main >= 1) {
             tvLeeHJ.setText("BI-RADS4类: (C) ≥1主要征象");
             tvLeeHJ.setTextColor(getResources().getColor(R.color.red));
-        }else if(treatResultCount.lee_hj >= 3){
+        } else if (treatResultCount.lee_hj >= 3) {
             tvLeeHJ.setText("BI-RADS4类: (B) ≥3次要征象");
             tvLeeHJ.setTextColor(getResources().getColor(R.color.pink));
-        }else if(treatResultCount.lee_hj >= 1){
+        } else if (treatResultCount.lee_hj >= 1) {
             tvLeeHJ.setText("BI-RADS4类: (A) ≤2次要征象");
             tvLeeHJ.setTextColor(getResources().getColor(R.color.pink));
-        }else{
+        } else {
             tvLeeHJ.setText("没有可疑征象");
             tvLeeHJ.setTextColor(getResources().getColor(R.color.gray));
         }
 
         int c = treatResultCount.costanini_m + treatResultCount.costanini_m_ok;
-        if(c >= 3){
+        if (c >= 3) {
             tvCostantiniM.setText("BI-RADS5类: ≥3项");
             tvCostantiniM.setTextColor(getResources().getColor(R.color.red));
-        }else{
+        } else {
             tvCostantiniM.setText("BI-RADS4类: ≤2项");
             tvCostantiniM.setTextColor(getResources().getColor(R.color.pink));
         }
 
 
         int g = treatResultCount.gokalp_g + treatResultCount.gokalp_g_ok;
-        if(g >= 2){
+        if (g >= 2) {
             tvGokalpG.setText("BI-RADS5类: ≥2项");
             tvGokalpG.setTextColor(getResources().getColor(R.color.red));
-        }else if(g >= 1){
+        } else if (g >= 1) {
             tvGokalpG.setText("BI-RADS4类: 1项");
             tvGokalpG.setTextColor(getResources().getColor(R.color.pink));
-        }else{
+        } else {
             tvGokalpG.setText("BI-RADS3类: 无恶性征象");
             tvGokalpG.setTextColor(getResources().getColor(R.color.gray));
         }
 
 
-
-        if(treatResultCount.lvguorong > 3){
+        if (treatResultCount.lvguorong > 3) {
             tvLvGuorong.setText("BI-RADS5类: >3项");
             tvLvGuorong.setTextColor(getResources().getColor(R.color.red));
-        }else if(treatResultCount.lvguorong == 3){
+        } else if (treatResultCount.lvguorong == 3) {
             tvLvGuorong.setText("BI-RADS4类: (C) 3项");
             tvLvGuorong.setTextColor(getResources().getColor(R.color.red));
-        }else if(treatResultCount.lvguorong == 2){
+        } else if (treatResultCount.lvguorong == 2) {
             tvLvGuorong.setText("BI-RADS4类: (B) 2项");
             tvLvGuorong.setTextColor(getResources().getColor(R.color.pink));
-        }else if(treatResultCount.lvguorong == 1){
+        } else if (treatResultCount.lvguorong == 1) {
             tvLvGuorong.setText("BI-RADS4类: (A) 1项");
             tvLvGuorong.setTextColor(getResources().getColor(R.color.pink));
-        }else{
+        } else {
             tvLvGuorong.setText("没有可疑征象");
             tvLvGuorong.setTextColor(getResources().getColor(R.color.gray));
         }
+
+
+
+        tvTreatResultDetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        tvBackTreatProcess.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        tvFinishTreatProject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
 
     }
 }
