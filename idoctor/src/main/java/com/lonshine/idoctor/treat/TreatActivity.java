@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.lonshine.idoctor.R;
 import com.lonshine.idoctor.data.DataString;
 import com.lonshine.idoctor.data.TreatDataManager;
+import com.lonshine.idoctor.event.FinishTreatEvent;
 import com.lonshine.idoctor.model.TreatCheckable;
 import com.lonshine.idoctor.model.TreatProcess;
 import com.lonshine.idoctor.model.TreatProject;
@@ -28,6 +29,7 @@ import bolts.Continuation;
 import bolts.Task;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import de.greenrobot.event.EventBus;
 
 /**
  * Created by lonshine on 15/11/11 下午9:52.
@@ -63,10 +65,16 @@ public class TreatActivity extends BaseFragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EventBus.getDefault().register(this);
         setContentView(R.layout.activity_treat);
         ButterKnife.inject(this);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
 
     @Override
     protected void initData() {
@@ -381,5 +389,9 @@ public class TreatActivity extends BaseFragmentActivity {
 
     }
 
+
+    public void onEventMainThread(FinishTreatEvent event){
+        finish();
+    }
 
 }

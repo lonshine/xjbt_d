@@ -7,12 +7,14 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.lonshine.idoctor.R;
+import com.lonshine.idoctor.event.FinishTreatEvent;
 import com.lonshine.idoctor.model.TreatProject;
 import com.lonshine.idoctor.model.TreatResultCode;
 import com.lonshine.lib.activity.BaseFragmentActivity;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import de.greenrobot.event.EventBus;
 
 /**
  * Created by lonshine on 15/12/9 下午9:01.
@@ -160,6 +162,7 @@ public class TreatResultActivity extends BaseFragmentActivity {
             @Override
             public void onClick(View v) {
                 finish();
+                EventBus.getDefault().post(new FinishTreatEvent());
             }
         });
 
