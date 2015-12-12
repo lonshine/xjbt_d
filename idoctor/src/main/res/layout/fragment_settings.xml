@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include layout="@layout/layout_base_title_bar"/>
+
+    <ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:text="账号绑定"
+                android:textColor="#999"
+                android:textSize="12sp"/>
+
+            <com.lonshine.idoctor.ui.setting.SettingsListItem
+                android:id="@+id/liBindUserWeixin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:si_show_btn="true"
+                app:si_sub_title_paddingToRight="10dp"
+                app:si_title="微信"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:text="联网设置"
+                android:textColor="#999"
+                android:textSize="12sp"/>
+
+            <com.lonshine.idoctor.ui.setting.SettingsListToggleItem
+                android:id="@+id/tiAutoPlay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:si_title="只在wifi下联网"/>
+
+
+            <com.lonshine.idoctor.ui.setting.SettingsListItem
+                android:id="@+id/liFeedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:si_title="意见反馈"/>
+
+
+            <com.lonshine.idoctor.ui.setting.SettingsListItem
+                android:id="@+id/liClearCache"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:si_show_arrow="false"
+                app:si_title="清除缓存"/>
+
+            <com.lonshine.idoctor.ui.setting.SettingsListItem
+                android:id="@+id/liAbout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:si_title="关于我们"/>
+
+            <Button
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_btn_rectangle_light"
+                android:text="退出登录"
+                android:textColor="@color/lib_main"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

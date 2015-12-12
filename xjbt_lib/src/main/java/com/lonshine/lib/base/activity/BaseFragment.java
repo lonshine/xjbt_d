@@ -1,4 +1,4 @@
-package com.lonshine.lib.activity;
+package com.lonshine.lib.base.activity;
 
 import android.app.Activity;
 import android.content.Intent;

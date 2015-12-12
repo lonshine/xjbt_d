@@ -1,4 +1,4 @@
-package com.lonshine.idoctor.treat;
+package com.lonshine.idoctor.ui.treat;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,7 +10,7 @@ import com.lonshine.idoctor.R;
 import com.lonshine.idoctor.event.FinishTreatEvent;
 import com.lonshine.idoctor.model.TreatProject;
 import com.lonshine.idoctor.model.TreatResultCode;
-import com.lonshine.lib.activity.BaseFragmentActivity;
+import com.lonshine.lib.base.activity.BaseFragmentActivity;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;

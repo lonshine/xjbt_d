@@ -1,4 +1,4 @@
-package com.lonshine.idoctor.treat;
+package com.lonshine.idoctor.ui.treat;
 
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.lonshine.idoctor.R;
 import com.lonshine.idoctor.model.TreatProcess;
 import com.lonshine.idoctor.widget.CheckViewGroup;
-import com.lonshine.lib.activity.BaseFragment;
+import com.lonshine.lib.base.activity.BaseFragment;
 import com.lonshine.lib.view.checkbox.CheckableView;
 
 /**

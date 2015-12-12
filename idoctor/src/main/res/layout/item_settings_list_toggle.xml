@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/lib/com.lonshine.idoctor"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/settings_item_height"
+                android:background="@drawable/bg_btn_rectangle_mid">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:lines="1"
+        android:maxLength="20"
+        android:text="TextView"
+        android:textColor="@color/black"
+        android:textSize="15sp"/>
+
+    <com.sevenheaven.iosswitch.ShSwitchView
+        android:id="@+id/svToggle"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        app:tintColor="#7A96CE"
+        app:backgroundColor="#e6e6e6"
+        app:foregroundColor="#ffffff"
+        app:shadowSpace="0dp"
+        android:layout_width="50dp"
+        android:layout_height="30dp"/>
+</RelativeLayout>

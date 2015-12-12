@@ -3,8 +3,8 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.zeroturnaround.jrebel.android'
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion "23.0.0 rc2"
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
 
     defaultConfig {
         applicationId "com.lonshine.idoctor"

@@ -1,4 +1,4 @@
-package com.lonshine.idoctor.treat;
+package com.lonshine.idoctor.ui.treat;
 
 import android.content.Context;
 import android.content.Intent;
@@ -19,7 +19,7 @@ import com.lonshine.idoctor.model.TreatProject;
 import com.lonshine.idoctor.model.TreatResultCode;
 import com.lonshine.idoctor.widget.CheckViewGroup;
 import com.lonshine.idoctor.widget.TreatCheckView;
-import com.lonshine.lib.activity.BaseFragmentActivity;
+import com.lonshine.lib.base.activity.BaseFragmentActivity;
 import com.lonshine.lib.data.gson.GsonManager;
 import com.lonshine.lib.view.checkbox.CheckableView;
 

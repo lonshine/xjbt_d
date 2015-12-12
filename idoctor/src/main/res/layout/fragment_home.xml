@@ -18,7 +18,7 @@
             android:id="@+id/layoutBanner"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:background="@color/yellow_ee"
+            android:background="@drawable/img_banner_1"
             ></RelativeLayout>
 
         <LinearLayout
@@ -106,16 +106,8 @@
 
             </LinearLayout>
 
-
-
         </LinearLayout>
 
-
-
-
-
     </RelativeLayout>
-
-
 
 </LinearLayout>

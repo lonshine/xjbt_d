@@ -1,4 +1,4 @@
-package com.lonshine.idoctor.treat;
+package com.lonshine.idoctor.ui.treat;
 
 import com.lonshine.idoctor.widget.CheckViewGroup;
 import com.lonshine.lib.view.checkbox.CheckableView;

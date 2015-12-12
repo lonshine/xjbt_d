@@ -1,4 +1,4 @@
-package com.lonshine.lib.activity;
+package com.lonshine.lib.base.activity;
 
 /**
  * Created by lonshine on 15/11/4 下午10:05.

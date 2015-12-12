@@ -1,4 +1,4 @@
-package com.lonshine.idoctor.main;
+package com.lonshine.idoctor.ui.main;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,7 +8,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.lonshine.idoctor.R;
-import com.lonshine.lib.activity.BaseFragmentActivity;
+import com.lonshine.lib.base.activity.BaseFragmentActivity;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;

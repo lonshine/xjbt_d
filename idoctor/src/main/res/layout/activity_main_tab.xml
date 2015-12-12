@@ -43,7 +43,7 @@
             android:button="@null"
             android:textSize="18sp"
             android:textColor="@color/main_tab_text"
-            android:text="我的"
+            android:text="设置"
             android:background="@color/lib_main"
             />
     </RadioGroup>

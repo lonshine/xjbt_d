@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SettingsListItem">
+        <attr name="si_title" format="string|reference"/>
+        <attr name="si_sub_title" format="string|reference"/>
+        <attr name="si_show_arrow" format="boolean"/>
+        <attr name="si_show_btn" format="boolean"/>
+        <attr name="si_sub_title_paddingToRight" format="dimension|reference"/>
+    </declare-styleable>
+</resources>

@@ -1,4 +1,4 @@
-package com.lonshine.idoctor.treat;
+package com.lonshine.idoctor.ui.treat;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

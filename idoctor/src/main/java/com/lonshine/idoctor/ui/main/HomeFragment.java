@@ -1,4 +1,4 @@
-package com.lonshine.idoctor.main;
+package com.lonshine.idoctor.ui.main;
 
 
 import android.os.Bundle;
@@ -7,8 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.lonshine.idoctor.R;
-import com.lonshine.idoctor.treat.TreatActivity;
-import com.lonshine.lib.activity.BaseFragment;
+import com.lonshine.idoctor.ui.treat.TreatActivity;
+import com.lonshine.lib.base.activity.BaseFragment;
 
 /**
  * Created by lonshine on 15/11/10 上午12:16.

@@ -2,7 +2,7 @@ package com.lonshine.idoctor;
 
 import android.os.Bundle;
 
-import com.lonshine.lib.activity.BaseFragmentActivity;
+import com.lonshine.lib.base.activity.BaseFragmentActivity;
 
 
 public class MainActivity extends BaseFragmentActivity {

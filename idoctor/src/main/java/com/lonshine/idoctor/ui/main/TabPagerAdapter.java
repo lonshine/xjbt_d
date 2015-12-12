@@ -1,8 +1,10 @@
-package com.lonshine.idoctor.main;
+package com.lonshine.idoctor.ui.main;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+
+import com.lonshine.idoctor.ui.setting.SettingsFragment;
 
 /**
  * Created by lonshine on 15/11/10 上午12:16.
@@ -16,6 +18,7 @@ public class TabPagerAdapter extends FragmentPagerAdapter {
     int mDiscoverInitTab = 0;
     HomeFragment mHomeFragment;
     InfoFragment mInfoFragment;
+    SettingsFragment mSettingsFragment;
 
     public TabPagerAdapter(FragmentManager fm) {
         super(fm);
@@ -46,10 +49,14 @@ public class TabPagerAdapter extends FragmentPagerAdapter {
                 fragment = mHomeFragment;
                 break;
             case TAB_ME:
-                if (mInfoFragment == null) {
-                    mInfoFragment = new InfoFragment();
+//                if (mInfoFragment == null) {
+//                    mInfoFragment = new InfoFragment();
+//                }
+//                fragment = mInfoFragment;
+                if (mSettingsFragment == null) {
+                    mSettingsFragment = new SettingsFragment();
                 }
-                fragment = mInfoFragment;
+                fragment = mSettingsFragment;
                 break;
         }
         return fragment;
