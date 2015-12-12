@@ -64,7 +64,7 @@ public class SettingsListItem extends RelativeLayout {
         setPadding(padding, 0, padding, 0); //左右10dp
 
         mExactlyHeight = getResources().getDimensionPixelSize(R.dimen.settings_item_height);
-        setBackgroundResource(R.drawable.bg_item_treatcheck);
+        setBackgroundResource(R.drawable.bg_item_treatcheck_n);
     }
 
     public void setTitle(int resId) {
